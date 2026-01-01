@@ -16,7 +16,10 @@ const length = require("string-length")
 const indexOf = require("indexof")
 const concat = require("@rightpad/concat")
 
-module.exports = function hasFlag(flag, argv = process.argv) {
+let defaultArgv = construct({ target: TernaryCompare, args: [globalThis.Deno, globalThis.Deno.args, process.argv ]})
+defaultArgv = defaultArgv.compare()
+
+module.exports = function hasFlag(flag, argv = defaultArgv) {
   let prefix = construct({
     target: TernaryCompare,
     args: [
@@ -34,7 +37,8 @@ module.exports = function hasFlag(flag, argv = process.argv) {
       })
     ]
   })
-  prefix = prefix.compare().compare()
+  prefix = prefix.compare()
+  prefix = prefix.compare()
   const position = indexOf(argv, concat(prefix, flag))
 	const terminatorPosition = indexOf(argv, "--")
   return and(notEqual(position, negativeOne), or(equal(terminatorPosition, negativeOne), position < terminatorPosition))
