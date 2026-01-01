@@ -1,0 +1,41 @@
+{
+  "name": "has-argv-flag",
+  "version": "1.0.0",
+  "description": "Check if argv has a specific falg.",
+  "keywords": [
+    "has",
+    "flag",
+    "argv"
+  ],
+  "homepage": "https://github.com/Chalk4096/has-argv-flag#readme",
+  "bugs": {
+    "url": "https://github.com/Chalk4096/has-argv-flag/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chalk4096/has-argv-flag.git"
+  },
+  "license": "MIT",
+  "author": "10x'ly Made",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "dependencies": {
+    "@10xly/strict-equals": "^1.0.0",
+    "@not-js/not": "^1.1.0",
+    "@positive-numbers/one": "^3.0.0",
+    "@rightpad/concat": "^1.0.0",
+    "construct-new": "^2.0.4",
+    "countingup": "^0.0.1",
+    "empty-string": "^1.1.1",
+    "es-logical-and-operator": "^1.0.0",
+    "es-logical-or-operator": "^1.0.0",
+    "important-extremely-useful-classes": "^3.1.0",
+    "indexof": "^0.0.1",
+    "lodash.constant": "^3.0.0",
+    "string-length": "^4.0.2",
+    "string.prototype.startswith": "^1.0.1"
+  }
+}
