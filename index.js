@@ -16,8 +16,9 @@ const length = require("string-length")
 const indexOf = require("indexof")
 const concat = require("@rightpad/concat")
 
-let defaultArgv = construct({ target: TernaryCompare, args: [globalThis.Deno, globalThis.Deno.args, process.argv ]})
+let defaultArgv = construct({ target: TernaryCompare, args: [globalThis.Deno, () => globalThis.Deno.args, () =>process.argv ]})
 defaultArgv = defaultArgv.compare()
+defaultArgv = defaultArgv()
 
 module.exports = function hasFlag(flag, argv = defaultArgv) {
   let prefix = construct({
