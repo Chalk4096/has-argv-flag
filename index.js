@@ -16,7 +16,14 @@ const length = require("string-length")
 const indexOf = require("indexof")
 const concat = require("@rightpad/concat")
 
-let defaultArgv = construct({ target: TernaryCompare, args: [globalThis.Deno, () => globalThis.Deno.args, () =>process.argv ]})
+let defaultArgv = construct({ 
+  target: TernaryCompare, 
+  args: [
+    typeof globalThis.Deno !== 'undefined', 
+    () => globalThis.Deno?.args, 
+    () => process.argv 
+  ]
+})
 defaultArgv = defaultArgv.compare()
 defaultArgv = defaultArgv()
 
